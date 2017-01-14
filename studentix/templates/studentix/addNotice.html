@@ -1,0 +1,39 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'studentix/style1.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'studentix/animate.css' %}" />
+
+
+	<div class="container">
+		<div class="top">
+			<h1 id="title" class="hidden"><span id="logo">STUDENTIX</span></h1>
+		</div>
+		<div class="login-box animated fadeInUp">
+			<div class="box-header">
+			<h2>Notice</h2>
+			</div>
+              <form action="" method="post">
+              {% csrf_token %}
+              <!-- Username: -->
+              {%if error_message %}
+              <p ><b> {{error_message}} </b></p>
+              {% endif %}
+               <label for="heading">Heading</label>
+			   <br/>
+			      <input type="text" style="width: 500px; height: 100px;" name="heading">
+			   <br/>
+             
+              <!-- Password: -->
+              <label for="detail">Detail</label>
+              <br/>
+              <input type="text" style="width: 500px; height: 400px;" name="detail">
+              <br/>
+              <button type="submit">ADD</button>
+              </form>
+              
+              </div>
+           
+	</div>
+
+
+</body>

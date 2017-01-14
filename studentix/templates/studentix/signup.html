@@ -1,0 +1,58 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'studentix/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'studentix/animate.css' %}" />
+
+<div class="container">
+		<div class="top">
+			<h1 id="title" class="hidden"><span id="logo">STUDENTIX</span></h1>
+		</div>
+		<div class="login-box animated fadeInUp">
+			<div class="box-header">
+			<h2>Sign up</h2>
+			</div>
+			<form action="studentSignup" method="post">
+			{% csrf_token %}
+			{%if error_message %}
+			<p ><b> {{error_message}} </b></p>
+			{% endif %}
+			<label for="username"><b>{{form.username.label_tag}}</b></label>
+			<br/>
+			{{form.username}}
+			<br/>
+			<label for="first_name"><b>{{form.first_name.label_tag}}</b></label>
+			<br/>
+			{{form.first_name}}
+			<br/>
+			<label for="last_name"><b>{{form.last_name.label_tag}}</b></label>
+			<br/>
+			{{form.last_name}}
+			<br/>
+			<!-- <br><br> -->
+			<label for="email"><b>{{form.email.label_tag}}</b></label>
+			<br/>
+			{{form.email}}
+			<br/>
+			<!-- <br><br> -->
+			<label for="contact"><b>{{form.contact.label_tag}}</b></label>
+			<br/>
+			{{form.contact}}
+			<br/>
+			<label for="dob"><b>{{form.dob.label_tag}}</b></label>
+			<br/>
+			{{form.dob}}
+			<br/>
+			<label for="password"><b>{{form.password.label_tag}}</b></label>
+			<br/>
+			{{form.password}}
+			<br/>
+			
+			<button type="submit">Sign UP</button>
+			</form>
+			<p>If you already have an account please <a href="/studentix/userLogin" > Login</a></p>
+			 </div>
+           
+	</div>
+
+
+</body>

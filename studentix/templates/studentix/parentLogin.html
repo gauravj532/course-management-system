@@ -1,0 +1,37 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'studentix/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'studentix/animate.css' %}" />
+
+
+	<div class="container">
+		<div class="top">
+			<h1 id="title" class="hidden"><span id="logo">STUDENTIX</span></h1>
+		</div>
+		<div class="login-box animated fadeInUp">
+			<div class="box-header">
+			<h2>Log In</h2>
+			</div>
+              <form action="" method="post">
+              {% csrf_token %}
+              <!-- Username: -->
+              {%if error_message %}
+              <p ><b> {{error_message}} </b></p>
+              {% endif %}
+              <label for="username"><b>{{form.username.label_tag}}</b></label>
+              <br/>
+             {{form.username}}
+              <br/>
+              <label for="dob"><b>{{form.dob.label_tag}}</b></label>
+              <br/>
+              {{form.dob}}
+              <br/>
+              <button type="submit">Sign In</button>
+              </form>
+                <p>If you do not have an <br/> account please <a href="/studentix/studentSignup" > Sign Up first</a></p>
+              </div>
+           
+	</div>
+
+
+</body>
